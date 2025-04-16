@@ -119,6 +119,10 @@
                                                 <label for="Inquiry Description" style="font-weight: bold">Inquiry Description</label>
                                                 <p>{{ $customer_inquiry->inquiry_description ?? ''}}</p>
                                             </div>
+                                            <div class="col-md-4 form-group">
+                                                <label for="Inquiry Details" style="font-weight: bold">Inquiry Details</label>
+                                                <p>{{ $customer_inquiry->inquiry_details ?? ''}}</p>
+                                            </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-4 form-group">

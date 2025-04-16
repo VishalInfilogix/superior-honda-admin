@@ -79,6 +79,7 @@
                                                 <tr>
                                                     <th>#</th>
                                                     <th>Customer Name</th>
+                                                    <th>Detail</th>
                                                     <th>Inquiry Status</th>
                                                     <th>Date</th>
                                                     @canany(['edit customer inquiry', 'delete customer inquiry'])
@@ -92,6 +93,7 @@
                                                         <tr>
                                                             <td>{{ $key + 1 }}</td>
                                                             <td>{{ ucfirst($customer_inquiry->customer_name) ?? '' }}</td>
+                                                            <td>{{ ucfirst($customer_inquiry->inquiry_details) ?? '' }}</td>
                                                             @if($customer_inquiry->inquiry_status == 'pending')
                                                             <td style="color:blue">{{ ucfirst($customer_inquiry->inquiry_status) ?? ''}}</td>
                                                             @elseif($customer_inquiry->inquiry_status == 'in_process')
