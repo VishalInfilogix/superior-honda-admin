@@ -61,7 +61,18 @@
                                         <div class="row">
                                             <div class="col-md-4 form-group">
                                                 <label for="Customer Inquiry Category" style="font-weight: bold">Customer Inquiry Category</label>                                                
-                                                <p>{{ ucfirst($customer_inquiry->customer_inquiry_category ?? 'Contact Us') }}</p>
+                                                <p>
+                                                    @if($customer_inquiry->customer_inquiry_category)
+                                                        @if($customer_inquiry->product->access_series == 1)
+                                                            Accesseries
+                                                        @elseif($customer_inquiry->product->is_service == 1)
+                                                            Service
+                                                        @else
+                                                            Product
+                                                        @endif
+                                                    @else
+                                                        Contact Us
+                                                    @endif
                                             </div>
                                             @if($customer_inquiry->customer_inquiry_category == 'promotion')
                                                 <div class="col-md-4 form-group">
